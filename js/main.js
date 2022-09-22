@@ -80,14 +80,10 @@ const listado = () => {                                                         
                                     <a href="#" class="btn btn-primary"> Carrito </a> 
                                 </div>
                             </div>    
-                            `;
-                                                                                // introducimos en el HTML el listado de productos.
+                            `;                                                                 // introducimos en el HTML el listado de productos.
         contenedor.append(div);                                                 // Insertamos el contenido en la etiqueta div que se va creando anteriormente.
         })
-
-    }; 
-
-    
+    };     
 butt1.addEventListener("click", listado);                                       // Utilizando el Evento Clic Creamos el listado de productos.
 butt2.addEventListener("click",() => {                                          // Utilizando el Evento Clic Borramos el listado de productos.
 contenedor.innerHTML  = "";
@@ -95,7 +91,7 @@ contenedor.innerHTML  = "";
 /* ---------- Opcion para ingresar un Producto ---------- */      
 
                
-/* let formulario1 = document.getElementById("form");                              // Traemos el nodo que tiene el atributgo form.
+let formulario1 = document.getElementById("form");                              // Traemos el nodo que tiene el atributgo form.
 let contenedor2 = document.getElementById("products2");                         // Traemos el nodo que tiene el atributo product.
 
 formulario1.addEventListener("submit", (e) => {                                 // Utilizando el evento "submit" creamos una funcion para extraer los datos tal cual fueron introducidos en la pagina.
@@ -113,11 +109,11 @@ formulario1.addEventListener("submit", (e) => {                                 
         div1.innerHTML = item2.showCars();                                      // introducimos el listado en el HTML. 
         contenedor2.append(div1);                                               // Agregamos el contenido a la etiqueta div > p.
     })
-}); */
+});
                
 /* ---------- Opcion para buscar un Producto ---------- */      
 
-/* let formulario2 = document.getElementById("form2");                             // Traemos el nodo que tiene el atributo form2.
+let formulario2 = document.getElementById("form2");                             // Traemos el nodo que tiene el atributo form2.
 let filters = document.getElementById("filter");                                // Traemos el nodo que tiene el atributo filter.
 
 formulario2.addEventListener("submit", (e) => {                                 // Utilizando el evento "submit" creamos una funcion para extraer los datos tal cual fueron introducidos en la pagina.
@@ -125,12 +121,23 @@ formulario2.addEventListener("submit", (e) => {                                 
     let findBrand = e.target.children;                                          // Capturamos las entradas del formulario y la asignamos a la variable findBrand, nos trae un HTML Collection.                           
     let brandValue = findBrand[0].value;                                        // Asginamos a la variable  brandValue el el valor(value) de la etiqueta(tag) en la posicion 0 del nodo padre "form2", nos devuelve el texto tal cual lo escribimos.   
     const result = cars.filter(car => car.brand === brandValue.toUpperCase());  // Usamos el Metodo Filter para que busque en el Array de productos la marca que necesitamos.
-    result.forEach(item3 => {                                                   // Recorremos el array que nos entrego el metodo Filter.
-        let p = document.createElement("p");                                    // Creamos el elemento parrafo.
-        p.innerHTML = item3.showCars();                                         // introducimos el listado en el HTML.
-        filters.append(p);                                                      // Agregamos el contenido a la etiqueta p.
-    });
-});    */         
+
+    result.forEach(item => {                                                    // Recorremos el array que nos entrego el metodo Filter.
+        let div = document.createElement("div");                                // Creamos un div para introducir el listado de productos.
+        div.innerHTML = `                                                       
+                            <div class="card" style="width: 18rem; d-flex flex-direction: row">
+                                <img src="${item.img}" class="card-img-top" alt="">
+                                <div class="card-body">
+                                    <h5 class="card-title"> Marca: ${item.brand} </h5>            
+                                    <p class="card-text"> Modelo: ${item.model} </p>      
+                                    <p class="card-text"> precio $${item.price} </p>
+                                    <a href="#" class="btn btn-primary"> Carrito </a> 
+                                </div>
+                            </div>    
+                        `;                                                      // introducimos en el HTML el listado del producto que filtramos.
+        filters.append(div);                                                    // Insertamos el contenido en la etiqueta div que se va creando anteriormente.
+        });
+});            
  
 
 /* ---------- Opcion Añadir un Producto ---------- */ 

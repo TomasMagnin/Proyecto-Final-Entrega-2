@@ -6,7 +6,7 @@
 
 
 /* ------------------------------------ Aplicamos Variables ----------------------------- */
-/* .boton, .botonContactos, .botonPages, .botonHome {
+.boton, .botonContactos, .botonPages, .botonHome {
   background-color: whitesmoke;
   color: whitesmoke;
   font-weight: 700;
@@ -100,7 +100,7 @@
 
 .botonTwitter {
   background-color: lightblue;
-} */
+}
 
 /* -------------------------------------------------------------------------------------------------------------------------- */
 
@@ -154,7 +154,7 @@
 
 /* ------------------------------------------------------------------Main Paginas Secuandarias--------------------------------------------------------------- */
 
-/* .tarjetas__conenedor {
+.tarjetas__conenedor {
     background-color: #203239;
     color: var(--clr-ceniza);
   }
@@ -180,4 +180,4 @@
   
   .modal-header h4 {
     text-align: center;
-  } */
+  }
