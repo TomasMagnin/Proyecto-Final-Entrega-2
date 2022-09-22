@@ -6,7 +6,7 @@
 
 
 /* ------------------------------------ Aplicamos Variables ----------------------------- */
-.boton, .botonContactos, .botonPages, .botonHome {
+/* .boton, .botonContactos, .botonPages, .botonHome {
   background-color: whitesmoke;
   color: whitesmoke;
   font-weight: 700;
@@ -100,7 +100,7 @@
 
 .botonTwitter {
   background-color: lightblue;
-}
+} */
 
 /* -------------------------------------------------------------------------------------------------------------------------- */
 
@@ -138,9 +138,23 @@
     transition: 0.5ms;
 }
 
+
+.ListProdcuts  {
+ /*  background-image: url("../assets/images/Backgraund1.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 5px;
+  margin: 5px;
+}
+
+
 /* ------------------------------------------------------------------Main Paginas Secuandarias--------------------------------------------------------------- */
 
-.tarjetas__conenedor {
+/* .tarjetas__conenedor {
     background-color: #203239;
     color: var(--clr-ceniza);
   }
@@ -166,4 +180,4 @@
   
   .modal-header h4 {
     text-align: center;
-  }
+  } */

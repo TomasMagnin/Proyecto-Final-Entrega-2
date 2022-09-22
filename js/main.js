@@ -7,6 +7,7 @@ class Products{
         this.model = info.model;
         this.year = info.year;
         this.price = info.price;
+        this.img = info.img;
         this.stock = info.stock;
         this.sold = false;
     }
@@ -24,15 +25,15 @@ class Products{
 
 let cars = [];
 
-cars.push(new Products({brand: "AUDI", model: "A3", year: 2015, price: 25000, img: `./assets/images/Autos/Audi-A4-720-1.jpg` ,stock: 4,}));
-cars.push(new Products({brand: "BMW", model: "M1", year: 2012, price: 55000, img: `./assets/images/Autos/BMW-330-720-1.jpg` , stock: 2,}));
-cars.push(new Products({brand: "DODGE", model: "RAM", year: 2014, price: 65000, stock: 8,}));
-cars.push(new Products({brand: "FIAT", model: "CRONOS", year: 2020, price: 13000, stock: 20,}));
-cars.push(new Products({brand: "RENAULT", model: "OROCH", year: 2016, price: 15000, stock: 10,}));
-cars.push(new Products({brand: "FORD", model: "FOCUS", year: 2015, price: 10000, stock: 15}));
-cars.push(new Products({brand: "CHEVROLET", model: "S10", year: 2010, price: 35000, stock: 6}));
-cars.push(new Products({brand: "TOYOTA", model: "HILLUX", year: 2019, price: 45000, stock: 20}));
-cars.push(new Products({brand: "VOLKSWAGEN", model: "GOLF", year: 2022, price: 30000, stock: 12}));
+cars.push(new Products({brand: "AUDI", model: "A3", year: 2015, price: 25000, img: "./assets/images/Autos/Audi-A4-720-1.jpg", stock: 4,}));
+cars.push(new Products({brand: "BMW", model: "M1", year: 2012, price: 55000, img: "../assets/images/Autos/BMW-330-720-1.jpg", stock: 2,}));
+cars.push(new Products({brand: "DODGE", model: "RAM", year: 2014, price: 65000, img: "../assets/images/Autos/Audi-A4-720-1.jpg", stock: 8,}));
+cars.push(new Products({brand: "FIAT", model: "CRONOS", year: 2020, price: 13000, img: "../assets/images/Autos/Audi-A4-720-1.jpg", stock: 20,}));
+cars.push(new Products({brand: "RENAULT", model: "OROCH", year: 2016, price: 15000, img: "../assets/images/Autos/Audi-A4-720-1.jpg", stock: 10,}));
+cars.push(new Products({brand: "FORD", model: "FOCUS", year: 2015, price: 10000, img: "../assets/images/Autos/Audi-A4-720-1.jpg", stock: 15}));
+cars.push(new Products({brand: "CHEVROLET", model: "S10", year: 2010, price: 35000, img: "../assets/images/Autos/Audi-A4-720-1.jpg", stock: 6}));
+cars.push(new Products({brand: "TOYOTA", model: "HILLUX", year: 2019, price: 45000, img: "../assets/images/Autos/Audi-A4-720-1.jpg", stock: 20}));
+cars.push(new Products({brand: "VOLKSWAGEN", model: "GOLF", year: 2022, price: 30000, img: "../assets/images/Autos/Audi-A4-720-1.jpg", stock: 12}));
 
 /* ---------- Creamos la funcion y evento para listar los productos---------- */      
 
@@ -40,7 +41,7 @@ cars.push(new Products({brand: "VOLKSWAGEN", model: "GOLF", year: 2022, price: 3
 
 
 /* --------------------------- */
-<div class="card" style="width: 18rem;">
+/* <div class="card" style="width: 18rem;">
   <img src="..." class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">Card title</h5>
@@ -49,32 +50,52 @@ cars.push(new Products({brand: "VOLKSWAGEN", model: "GOLF", year: 2022, price: 3
   </div>
 </div>
 
+const div = document.createElement("div");
+div.textContent = "Esto es un div insertado con JS.";
+
+const app = document.createElement("div"); // <div></div>
+app.id = "app";       // <div id="app"></div>
+app.appendChild(div); // <div id="app"><div>Esto es un div insertado con JS</div></div>
+
+ */
+/* ----------------------------------------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------------------------------- */
 
 let contenedor = document.getElementById("ListProdcuts");                           // Traemos el nodo que tiene el atributo product.
 let butt1 = document.getElementById("btn1");                                    // Traemos el nodo que tiene el atributo btn1.
 let butt2 = document.getElementById("btn2");                                    // Traemos el nodo que tiene el atributo btn1.
 
+
 const listado = () => {                                                         // Creamos la funcion listado, para recorrer el array y llamarla mas adelante.
     cars.forEach(item => {                                                      // Recorremos todo el Array compuesto por objetos.
         let div = document.createElement("div");                                // Creamos un div para introducir el listado de productos.
-        div.innerHTML =    `<img src=${item.img} alt="">
-                            <h3> Marca: ${item.brand} </h3>            
-                            <p> Modelo: ${item.model} </p>      
-                            <p> precio $${item.price} </p>
-
-                            <br> \n <br> `;                                     // introducimos en el HTML el listado de productos.
+        div.innerHTML =    `
+                            <div class="card" style="width: 18rem; d-flex flex-direction: row">
+                                <img src="${item.img}" class="card-img-top" alt="">
+                                <div class="card-body">
+                                    <h5 class="card-title"> Marca: ${item.brand} </h5>            
+                                    <p class="card-text"> Modelo: ${item.model} </p>      
+                                    <p class="card-text"> precio $${item.price} </p>
+                                    <a href="#" class="btn btn-primary"> Carrito </a> 
+                                </div>
+                            </div>    
+                            `;
+                                                                                // introducimos en el HTML el listado de productos.
         contenedor.append(div);                                                 // Insertamos el contenido en la etiqueta div que se va creando anteriormente.
         })
-    };
+
+    }; 
+
+    
 butt1.addEventListener("click", listado);                                       // Utilizando el Evento Clic Creamos el listado de productos.
 butt2.addEventListener("click",() => {                                          // Utilizando el Evento Clic Borramos el listado de productos.
 contenedor.innerHTML  = "";
-});
-
+}); 
 /* ---------- Opcion para ingresar un Producto ---------- */      
 
                
-let formulario1 = document.getElementById("form");                              // Traemos el nodo que tiene el atributgo form.
+/* let formulario1 = document.getElementById("form");                              // Traemos el nodo que tiene el atributgo form.
 let contenedor2 = document.getElementById("products2");                         // Traemos el nodo que tiene el atributo product.
 
 formulario1.addEventListener("submit", (e) => {                                 // Utilizando el evento "submit" creamos una funcion para extraer los datos tal cual fueron introducidos en la pagina.
@@ -92,11 +113,11 @@ formulario1.addEventListener("submit", (e) => {                                 
         div1.innerHTML = item2.showCars();                                      // introducimos el listado en el HTML. 
         contenedor2.append(div1);                                               // Agregamos el contenido a la etiqueta div > p.
     })
-});
+}); */
                
 /* ---------- Opcion para buscar un Producto ---------- */      
 
-let formulario2 = document.getElementById("form2");                             // Traemos el nodo que tiene el atributo form2.
+/* let formulario2 = document.getElementById("form2");                             // Traemos el nodo que tiene el atributo form2.
 let filters = document.getElementById("filter");                                // Traemos el nodo que tiene el atributo filter.
 
 formulario2.addEventListener("submit", (e) => {                                 // Utilizando el evento "submit" creamos una funcion para extraer los datos tal cual fueron introducidos en la pagina.
@@ -109,8 +130,8 @@ formulario2.addEventListener("submit", (e) => {                                 
         p.innerHTML = item3.showCars();                                         // introducimos el listado en el HTML.
         filters.append(p);                                                      // Agregamos el contenido a la etiqueta p.
     });
-});            
-
+});    */         
+ 
 
 /* ---------- Opcion Añadir un Producto ---------- */ 
 
