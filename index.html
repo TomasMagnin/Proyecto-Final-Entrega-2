@@ -38,9 +38,13 @@
                 <a class="nav-link" href="#" >Buscar Poductos</a>
               </li>
             </ul>
-            <form class="d-flex">
+            <form class="d-flex formNav">
               <input class="form-control me-2" type="search" placeholder="Search Car" aria-label="Search">
               <button class="btn buttNav btn-outline-success" type="submit">Search</button>
+            </form>
+            <form class="d-flex formNav" id="formNav">
+              <input class="form-control me-2" type="search" placeholder="Search Car" aria-label="Search">
+              <button class="btn buttNav btn-outline-success" type="submit">Usuario</button>
             </form>
           </div>
         </div>
@@ -52,7 +56,8 @@
   <section id="ListProdcuts" class="ListProdcuts">
     <div class="row d-flex justify-content-center tarjetas">
       <h2 class="tarjetas__title  text-center m-3 letraTitulo1">Haga Clic en Productos > Listar Productos,  Para ver Nuestro Stock</h2>
-  </section>
+     
+    </section>
 
 
 
@@ -65,17 +70,17 @@
     <br>
     <br>
     <div class="container-fluid"> 
-      <form id="form1">
+      <form id="form" class="form1">
           <p><b>Ingrese la Marca</b></p>
-          <input type="text" id="brandField"> <br>
+          <input type="text" id="brandField" class="inputForm1"> <br>
           <p><b>Ingrese el Modelo</b></p>
-          <input type="text" id="modelField"> <br>
+          <input type="text" id="modelField" class="inputForm1"> <br>
           <p><b>Ingrese el Año</b></p>
-          <input type="number" id="numberYearField"> <br>
+          <input type="number" id="numberYearField" class="inputForm1"> <br>
           <p><b>Ingrese el Precio</b></p>
-          <input type="number" id="priceField"> <br>
+          <input type="number" id="priceField" class="inputForm1"> <br>
           <p><b>Ingrese la Cantiad de Stock</b></p>
-          <input type="number" id="stockField"> <br>
+          <input type="number" id="stockField" class="inputForm1"> <br>
           <br>
           <p><b>Haga clic en enviar para Cargar los datos Ingresados</b></p>
           <input type="submit"> <br>
@@ -99,7 +104,7 @@
 
 
   <section>
-    <h2 class="tarjetas__title  text-center m-3 letraTitulo1">Busque su Producto Aqui</h2>
+    <h2 class="tarjetas__title  text-center m-3 letraTitulo1">Busque la Marca de su Vehículo</h2>
     <form id="form2" class="form2">
         <input type="text">
         <br>

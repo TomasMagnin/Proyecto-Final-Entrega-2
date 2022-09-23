@@ -62,7 +62,7 @@ app.appendChild(div); // <div id="app"><div>Esto es un div insertado con JS</div
 
 /* ---------------------------------------------------------------------------------------- */
 
-let contenedor = document.getElementById("ListProdcuts");                           // Traemos el nodo que tiene el atributo product.
+let contenedor = document.getElementById("ListProdcuts");                       // Traemos el nodo que tiene el atributo product.
 let butt1 = document.getElementById("btn1");                                    // Traemos el nodo que tiene el atributo btn1.
 let butt2 = document.getElementById("btn2");                                    // Traemos el nodo que tiene el atributo btn1.
 
@@ -80,7 +80,7 @@ const listado = () => {                                                         
                                     <a href="#" class="btn btn-primary"> Carrito </a> 
                                 </div>
                             </div>    
-                            `;                                                                 // introducimos en el HTML el listado de productos.
+                            `;                                                  // introducimos en el HTML el listado de productos.
         contenedor.append(div);                                                 // Insertamos el contenido en la etiqueta div que se va creando anteriormente.
         })
     };     
@@ -109,11 +109,30 @@ formulario1.addEventListener("submit", (e) => {                                 
     let input5 = formVar[13].value;
     cars.push(new Products({brand: `${input1}`, model: `${input2}`, year: `${input3}`, price: `${input4}`, stock: `${input5}`, sold: false}));
     
-    cars.forEach(item2 => {                                                     // Recorremos todo el Array con el nuevo producto.
+   
+   
+    cars.forEach(item => {                                                      // Recorremos todo el Array compuesto por objetos.
+        let div = document.createElement("div");                                // Creamos un div para introducir el listado de productos.
+        div.innerHTML =    `
+                            <div class="card" style="width: 18rem; d-flex flex-direction: row">
+                                <img src="${item.img}" class="card-img-top" alt="">
+                                <div class="card-body">
+                                    <h5 class="card-title"> Marca: ${item.brand} </h5>            
+                                    <p class="card-text"> Modelo: ${item.model} </p>      
+                                    <p class="card-text"> precio $${item.price} </p>
+                                    <a href="#" class="btn btn-primary"> Carrito </a> 
+                                </div>
+                            </div>    
+                            `;                                                  // introducimos en el HTML el listado de productos.
+        contenedor.append(div);                                                 // Insertamos el contenido en la etiqueta div que se va creando anteriormente.
+        })
+    
+   
+    /* cars.forEach(item2 => {                                                     // Recorremos todo el Array con el nuevo producto.
         let div1 = document.createElement("div" && "p");                        // Creamos la etiqueta div y p.
         div1.innerHTML = item2.showCars();                                      // introducimos el listado en el HTML. 
         contenedor2.append(div1);                                               // Agregamos el contenido a la etiqueta div > p.
-    })
+    }) */
 });
 
 
@@ -124,9 +143,7 @@ formulario1.addEventListener("submit", (e) => {                                 
 
 
 
-/* -------------------------------------------------------------------- */
-
-/* ---------- Opcion para ingresar un Producto ---------- */      
+/* ---------- Opcion Añadir un Producto ---------- */   
                
 /* let formulario1 = document.getElementById("form");                              // Traemos el nodo que tiene el atributgo form.
 let contenedor2 = document.getElementById("products2");                         // Traemos el nodo que tiene el atributo product.
@@ -148,7 +165,10 @@ formulario1.addEventListener("submit", (e) => {                                 
         contenedor2.append(div1);                                               // Agregamos el contenido a la etiqueta div > p.
     })
 }); */
-               
+      
+
+
+
 /* ---------- Opcion para buscar un Producto ---------- */      
 
 let formulario2 = document.getElementById("form2");                             // Traemos el nodo que tiene el atributo form2.
@@ -178,7 +198,23 @@ formulario2.addEventListener("submit", (e) => {                                 
 });            
  
 
-/* ---------- Opcion Añadir un Producto ---------- */ 
 
 
-    
+
+/* ---------- Sesion de Usuario ---------- */
+
+
+
+let usx = getElementById("formNav");
+let usuario;                                                                    // Creamos la variable usuario
+let usuarioStorage = sessionStorage.getItem("usuario");                         // Traemos del sessionStorage el contenido de la variable
+
+
+if(usuarioStorage){                                                             // Si la variable tiene contenido.
+    let mensaje = `Bienvenido ${usuarioStorage}`;                               // Entoces sale el cartel de saludo
+    alert(mensaje);
+}else{
+    usuario = prompt("Ingrese su nombre");                                      // Ingresamos por consola el nombre y se le asigna a la variable usuario.
+    sessionStorage.setItem("usuario", usuario);                                 // Guardamos en sessionStorage el contenido de la variable usuario.
+    alert("Bienvenido es tu primera Vez");                                      // Imprimismo el contenido.
+}

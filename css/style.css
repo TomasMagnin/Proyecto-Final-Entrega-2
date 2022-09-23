@@ -161,6 +161,7 @@
 }
 
 .form1 {
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -168,12 +169,10 @@
   margin-top: 20px;
 }
 
-.form1 p {
-  align-self:  center;
-}
 
-.form1 input {
+.form1 b {
   align-self:  center;
+  color: whitesmoke;
 }
 
 .form2Input {
@@ -185,6 +184,11 @@
   padding-top: 50px;
   display: flex;
   justify-content: center;
+}
+
+.formNav {
+  
+  padding: 5px;
 }
 /* ------------------------------------------------------------------Main Paginas Secuandarias--------------------------------------------------------------- */
 
