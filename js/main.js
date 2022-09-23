@@ -88,9 +88,13 @@ butt1.addEventListener("click", listado);                                       
 butt2.addEventListener("click",() => {                                          // Utilizando el Evento Clic Borramos el listado de productos.
 contenedor.innerHTML  = "";
 }); 
-/* ---------- Opcion para ingresar un Producto ---------- */      
 
-               
+
+
+
+
+/* -------------------------------------------------------------------- */
+
 let formulario1 = document.getElementById("form");                              // Traemos el nodo que tiene el atributgo form.
 let contenedor2 = document.getElementById("products2");                         // Traemos el nodo que tiene el atributo product.
 
@@ -104,12 +108,46 @@ formulario1.addEventListener("submit", (e) => {                                 
     let input4 = formVar[10].value;                                             // Asginamos a la variable  input3 el el valor(value) de la etiqueta(tag) en la posicion 10 del nodo padre "form", nos devuelve el texto tal cual lo escribimos.
     let input5 = formVar[13].value;
     cars.push(new Products({brand: `${input1}`, model: `${input2}`, year: `${input3}`, price: `${input4}`, stock: `${input5}`, sold: false}));
+    
     cars.forEach(item2 => {                                                     // Recorremos todo el Array con el nuevo producto.
         let div1 = document.createElement("div" && "p");                        // Creamos la etiqueta div y p.
         div1.innerHTML = item2.showCars();                                      // introducimos el listado en el HTML. 
         contenedor2.append(div1);                                               // Agregamos el contenido a la etiqueta div > p.
     })
 });
+
+
+
+
+
+
+
+
+
+/* -------------------------------------------------------------------- */
+
+/* ---------- Opcion para ingresar un Producto ---------- */      
+               
+/* let formulario1 = document.getElementById("form");                              // Traemos el nodo que tiene el atributgo form.
+let contenedor2 = document.getElementById("products2");                         // Traemos el nodo que tiene el atributo product.
+
+formulario1.addEventListener("submit", (e) => {                                 // Utilizando el evento "submit" creamos una funcion para extraer los datos tal cual fueron introducidos en la pagina.
+    e.preventDefault();
+    let formVar = e.target.children;
+    let input1 = formVar[1].value.toUpperCase();                                // Asginamos a la variable  input1 el el valor(value) de la etiqueta(tag) en la posicion 1 del nodo padre "form", nos devuelve el texto tal cual lo escribimos.   
+    //let input1 = document.getElementById("brandField").value;                 // Otra forma de traer el contenido del imput pero no se si es correcto.
+    let input2 = formVar[4].value.toUpperCase();                                // Asginamos a la variable  input2 el el valor(value) de la etiqueta(tag) en la posicion 4 del nodo padre "form", nos devuelve el texto tal cual lo escribimos.
+    let input3 = formVar[7].value;                                              // Asginamos a la variable  input3 el el valor(value) de la etiqueta(tag) en la posicion 7 del nodo padre "form", nos devuelve el texto tal cual lo escribimos.                   
+    let input4 = formVar[10].value;                                             // Asginamos a la variable  input3 el el valor(value) de la etiqueta(tag) en la posicion 10 del nodo padre "form", nos devuelve el texto tal cual lo escribimos.
+    let input5 = formVar[13].value;
+    cars.push(new Products({brand: `${input1}`, model: `${input2}`, year: `${input3}`, price: `${input4}`, stock: `${input5}`, sold: false}));
+    
+    cars.forEach(item2 => {                                                     // Recorremos todo el Array con el nuevo producto.
+        let div1 = document.createElement("div" && "p");                        // Creamos la etiqueta div y p.
+        div1.innerHTML = item2.showCars();                                      // introducimos el listado en el HTML. 
+        contenedor2.append(div1);                                               // Agregamos el contenido a la etiqueta div > p.
+    })
+}); */
                
 /* ---------- Opcion para buscar un Producto ---------- */      
 

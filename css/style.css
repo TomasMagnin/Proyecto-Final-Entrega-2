@@ -152,6 +152,40 @@
 }
 
 
+.form2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.form1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.form1 p {
+  align-self:  center;
+}
+
+.form1 input {
+  align-self:  center;
+}
+
+.form2Input {
+  width: 200px;
+  align-items: center;
+}
+
+.ListProdcuts {
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+}
 /* ------------------------------------------------------------------Main Paginas Secuandarias--------------------------------------------------------------- */
 
 .tarjetas__conenedor {
