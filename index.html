@@ -21,7 +21,7 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse " id="navbarSupportedContent">
-            <ul class="navbar-nav navList me-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav navList me-auto mb-2 mb-md-0">
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle"  href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Productos
@@ -46,12 +46,14 @@
               <input class="form-control me-2" type="search" placeholder="Ingrese su Usuario" aria-label="Search">
               <button class="btn buttNav btn-outline-success" type="submit">Usuario</button>
             </form>
+            <a class="buscador-icon" id="carrito" href="#">
+              <img src="./carrito-de-compras.png" alt="Buscador">
+            </a>
+
           </div>
         </div>
       </nav>
 </header>
-
-
 <main class="tarjetas__conenedor">
   <section >
     <div class="row d-flex justify-content-center tarjetas">
@@ -61,9 +63,6 @@
       <div id="ListProdcuts" class="ListProdcuts" ></div>
     </div>  
   </section>
-
-
-
   <section>
     <h2 class="tarjetas__title  text-center m-3 letraTitulo1"> Complete el formualrio para ingresar un Nuevo Producto</h2>
     <div class="container-fluid"> 
@@ -78,39 +77,24 @@
           <input type="number" id="priceField" class="inputForm1"> <br>
           <p><b>Ingrese la Cantiad de Stock</b></p>
           <input type="number" id="stockField" class="inputForm1"> <br>
-          <br>
+          <p><b>Ingrese una Imagen del Producto</b></p>
+          <input type="file" id="image" class="inputForm1 importImput"> <br>
           <p><b>Haga clic en enviar para Cargar los datos Ingresados</b></p>
           <input type="submit"> <br>
           <input type="reset"><br>
       </form>
     </div>  
-    <div id="products2">
-      
-    </div>
+    <div id="products2" class="row d-flex justify-content-center tarjetas"></div>
   </section>
-
-
-
-
-
   <section>
     <h2 class="tarjetas__title  text-center m-3 letraTitulo1">Busque la Marca de su Vehículo</h2>
     <form id="form2" class="form2">
         <input type="text">
-        <br>
-        <br>
-        <input type="submit" class="form2Input">
+        <input type="submit" class=" row d-flex justify-content-center tarjetas form2Input mt-2" placeholder="Buscar" >
     </form>
-    <br>
-    <br>
-    <div id="filter"></div>
-
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+    <div id="filter" class=" form2Input row d-flex justify-content-center tarjetas">
+      
+    </div>
   </section>
 </main>
 
