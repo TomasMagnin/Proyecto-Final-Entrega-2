@@ -59,16 +59,13 @@ const listado = () => {                                                         
                         </div>    
                         `;                                                      // introducimos en el HTML el listado de productos.
         contenedor.appendChild(div);                                            // Insertamos el contenido en la etiqueta div que se va creando anteriormente.
-        addBtn = document.getElementById(`agregar${item.id}`)  
-        addBtn.addEventListener("click", () => {
+        addBtn = document.getElementById(`agregar${item.id}`)                   // Traemos a los objetos .ID    
+        addBtn.addEventListener("click", () => {                                // Cuando se haga clic en el objeto.ID se llama a la Funcion addcarrito.            
             addCarrito(item.id)
         })
     })
-    };
+};
     
-    
-
-
 
 butt1.addEventListener("click", listado);                                       // Utilizando el Evento Clic Creamos el listado de productos.
 butt2.addEventListener("click",() => {                                          // Utilizando el Evento Clic Borramos el listado de productos.
@@ -83,45 +80,6 @@ const addCarrito = item3 => {
     carrito.push(itemID);
     console.log(carrito);
 };
-
-/* cars.forEach(item3 => {
-    addBtn = document.getElementById(`agregar${item3.id}`)  
-    addBtn.addEventListener("click", () => {
-    addCarrito(item3.id)
-}); */
-
-
-
-/* ---------------------------------------------------------------------------------------------------------------------------------------------- */
-
-/* let contenedor = document.getElementById("ListProdcuts");                       // Traemos el nodo que tiene el atributo product.
-let butt1 = document.getElementById("btn1");                                    // Traemos el nodo que tiene el atributo btn1.
-let butt2 = document.getElementById("btn2");                                    // Traemos el nodo que tiene el atributo btn1.
-
-
-const listado = () => {                                                         // Creamos la funcion listado, para recorrer el array y llamarla mas adelante.
-    cars.forEach(item => {                                                      // Recorremos todo el Array compuesto por objetos.
-        let div = document.createElement("div");                                // Creamos un div para introducir el listado de productos.
-        div.innerHTML = `
-                        <div class="card" style="width: 18rem; d-flex flex-direction: row">
-                            <img src=${item.img} class="card-img-top" alt="">
-                            <div class="card-body">
-                                <h5 class="card-title"> Marca: ${item.brand} </h5>            
-                                <p class="card-text"> Modelo: ${item.model} </p>      
-                                <p class="card-text"> precio $${item.price} </p>
-                                <a href="#" id = "agregar${item.id}" class="btn btn-primary"> Carrito </a> 
-                            </div>
-                        </div>    
-                        `;                                                      // introducimos en el HTML el listado de productos.
-        contenedor.appendChild(div);                                            // Insertamos el contenido en la etiqueta div que se va creando anteriormente.
-        })
-    };     
-butt1.addEventListener("click", listado);                                       // Utilizando el Evento Clic Creamos el listado de productos.
-butt2.addEventListener("click",() => {                                          // Utilizando el Evento Clic Borramos el listado de productos.
-contenedor.innerHTML  = "";
-}); */ 
-
-
 
 /* ---------- Opcion Añadir un Producto ---------- */   
 let newCar = []; 
@@ -191,7 +149,7 @@ formulario2.addEventListener("submit", (e) => {                                 
  
 /* ---------- Sesion de Usuario / Session Storage ---------- */
 
-/* let usx = document.getElementById("formNav");
+let usx = document.getElementById("formNav");
 let usuario;                                                                    // Creamos la variable usuario
 let usuarioStorage = sessionStorage.getItem("usuario");                         // Traemos del sessionStorage el contenido de la variable
 
@@ -204,7 +162,7 @@ if(usuarioStorage){                                                             
     alert("Bienvenido es tu primera Vez");                                      // Imprimismo el contenido.
 }
 
- */
+
 
 /* ---------- Carrito de compras---------- */
 
